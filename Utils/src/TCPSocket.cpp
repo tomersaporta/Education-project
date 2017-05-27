@@ -25,7 +25,14 @@ TCPSocket::TCPSocket(size_t port) {
 			close();
 	}
 
+	int optval = 1;
+	setsockopt(socket_fd, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof optval);
+
+
+	//clear the struct
 	bzero(&this->s_local, sizeof(this->s_local));
+
+
 	this->s_local.sin_family = AF_INET;
 	this->s_local.sin_port = htons(port);
 	this->s_local.sin_addr.s_addr = htonl(INADDR_ANY);

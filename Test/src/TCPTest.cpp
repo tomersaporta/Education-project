@@ -31,7 +31,7 @@ bool TCPTest::test(){
 	sleep(3);
 //Create a TCP client
 	//new TCP Socket
-	TCPSocket *client = new TCPSocket("127.0.0.1", 4321);
+	TCPSocket *client = new TCPSocket("127.0.0.1", TCPTEST_PORT);
 	//writ
 
 	client->send(msg, sizeof(msg));
@@ -58,7 +58,7 @@ void TCPTest::run(){
 	//The server side
 
 	//open TCP Socket
-	TCPSocket *server = new TCPSocket(4321);
+	TCPSocket *server = new TCPSocket(TCPTEST_PORT);
 
 	//Accept
 	TCPSocket * aClient = server->listenAndAccept();

@@ -12,6 +12,7 @@
 #include "TCPSocket.h"
 #include <iostream>
 #include <string.h>
+#define TCPTEST_PORT 4321
 
 namespace networkingLab {
 
@@ -19,7 +20,6 @@ class TCPTest : public MThread {
 public:
 	TCPTest();
 	virtual ~TCPTest();
-
 	bool test();
 	void run();
 };

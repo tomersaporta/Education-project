@@ -21,13 +21,8 @@ using namespace std;
 
 namespace networkingLab {
 
-UDPSocket::~UDPSocket() {
-	// TODO Auto-generated destructor stub
-}
-
 
 UDPSocket::UDPSocket(int port){
-
 	socket_fd = socket(AF_INET, SOCK_DGRAM, 0);
 		bzero((char*) &s_from, sizeof(s_from));
 		bzero((char*) &s_in, sizeof(s_in));
@@ -40,6 +35,9 @@ UDPSocket::UDPSocket(int port){
 			perror("Error naming channel");
 		}
 
+}
+UDPSocket::~UDPSocket() {
+	// TODO Auto-generated destructor stub
 }
 
 /**
@@ -112,5 +110,7 @@ void UDPSocket::close(){
 string UDPSocket::fromAddr(){
 	return inet_ntoa(s_from.sin_addr);
 } /* namespace networkingLab */
+
+
 
 }

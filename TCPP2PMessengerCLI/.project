@@ -3,8 +3,8 @@
 	<name>TCPP2PMessengerCLI</name>
 	<comment></comment>
 	<projects>
+		<project>SocketUtils</project>
 		<project>TCPP2PMessenger</project>
-		<project>Utils</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

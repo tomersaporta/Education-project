@@ -3,6 +3,7 @@
 	<name>Test</name>
 	<comment></comment>
 	<projects>
+		<project>SocketUtils</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -44,7 +44,7 @@ all: UDPMessenger
 UDPMessenger: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -L"/home/user/Web developer/lab5/Utils/Debug" -pthread -o "UDPMessenger" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L"/home/user/git/Education-project/Utils/Debug" -pthread -o "UDPMessenger" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

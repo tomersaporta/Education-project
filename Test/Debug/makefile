@@ -40,11 +40,14 @@ endif
 # All Target
 all: Test
 
+dependents:
+	-cd /home/user/git/Education-project/Utils/Debug && $(MAKE) all
+
 # Tool invocations
-Test: $(OBJS) $(USER_OBJS)
+Test: $(OBJS) $(USER_OBJS) /home/user/git/Education-project/Utils/Debug/libSocketUtils.a
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -L"/home/user/Web developer/lab5/Utils/Debug" -pthread -o "Test" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L"/home/user/git/Education-project/Utils/Debug" -pthread -o "Test" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -55,5 +58,6 @@ clean:
 
 .PHONY: all clean dependents
 .SECONDARY:
+/home/user/git/Education-project/Utils/Debug/libSocketUtils.a:
 
 -include ../makefile.targets
